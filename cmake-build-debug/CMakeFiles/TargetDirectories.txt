@@ -1,0 +1,3 @@
+C:/Users/Gelog/Desktop/HomeTask/HomeTask/cmake-build-debug/CMakeFiles/HomeTask.dir
+C:/Users/Gelog/Desktop/HomeTask/HomeTask/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Gelog/Desktop/HomeTask/HomeTask/cmake-build-debug/CMakeFiles/rebuild_cache.dir

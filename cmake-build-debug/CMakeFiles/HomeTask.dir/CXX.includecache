@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Gelog/Desktop/HomeTask/HomeTask/Stack.h
+
+C:/Users/Gelog/Desktop/HomeTask/HomeTask/StackArray.h
+iostream
+-
+Stack.h
+C:/Users/Gelog/Desktop/HomeTask/HomeTask/Stack.h
+StackOverflow.hpp
+C:/Users/Gelog/Desktop/HomeTask/HomeTask/StackOverflow.hpp
+StackUnderflow.hpp
+C:/Users/Gelog/Desktop/HomeTask/HomeTask/StackUnderflow.hpp
+WrongStackSize.hpp
+C:/Users/Gelog/Desktop/HomeTask/HomeTask/WrongStackSize.hpp
+
+C:/Users/Gelog/Desktop/HomeTask/HomeTask/StackList.h
+iostream
+-
+Stack.h
+C:/Users/Gelog/Desktop/HomeTask/HomeTask/Stack.h
+StackUnderflow.hpp
+C:/Users/Gelog/Desktop/HomeTask/HomeTask/StackUnderflow.hpp
+
+C:/Users/Gelog/Desktop/HomeTask/HomeTask/StackOverflow.hpp
+iostream
+-
+
+C:/Users/Gelog/Desktop/HomeTask/HomeTask/StackUnderflow.hpp
+
+C:/Users/Gelog/Desktop/HomeTask/HomeTask/WrongStackSize.hpp
+iostream
+-
+
+C:/Users/Gelog/Desktop/HomeTask/HomeTask/main.cpp
+StackList.h
+C:/Users/Gelog/Desktop/HomeTask/HomeTask/StackList.h
+StackArray.h
+C:/Users/Gelog/Desktop/HomeTask/HomeTask/StackArray.h
+
