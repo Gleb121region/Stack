@@ -3,42 +3,45 @@
 
 using namespace std;
 
-bool check_balance_brackets(std::string text, int maxDeep = 30) {
-  bool is_everything_closed;
-  int size_string;
-  char symbol;
+bool check_balance_brackets(std::string &text, int maxDeep = 30) {
+  StackArray<char> stackArray = StackArray<char>(text.size());
 
-  is_everything_closed = false;
+  bool isBalanceBrackets = true;
 
-  size_string = text.size();
-//  StackArray<char> stackArray = StackArray<char>(size_string);
 
-  if (size_string > maxDeep || size_string == 0) {
-    throw "String size 0 or more  30 symbol.\n";
-  }
-  if (size_string % 2 == 0) {
-    for (int i = 0; i < size_string; ++i) {
-      for (int j = size_string - 1; j >= 0; j--) {
-        if (text[i] == '(' && text[j] == ')') {
-          is_everything_closed = true;
-//          stackArray.push(text[i]);
-        } else {}
+  for (std::size_t i = 0; (i < text.size()) && (isBalanceBrackets == true); ++i) {
 
-        if (text[i] == '{' && text[j] == '}') {
-          is_everything_closed = true;
-//            stackArray.push(text[i]);
-        } else {}
+    char cText = text.at(i);
 
-        if (text[i] == '[' && text[j] == ']') {
-          is_everything_closed = true;
-//              stackArray.push(text[i]);
+    switch (cText) {
+      case '(':
+      case '[':
+      case '{':
+        stackArray.push(cText);
+        break;
+
+      case ')':
+        if (stackArray.pop() != '(') {
+          isBalanceBrackets = false;
         }
-      }
+        break;
+
+      case ']':
+        if (stackArray.pop() != '[') {
+          isBalanceBrackets = false;
+        }
+        break;
+
+      case '}':
+        if (stackArray.pop() != '{') {
+          isBalanceBrackets = false;
+        }
+        break;
     }
-  } else {
-    throw StackUnderflow();
   }
-  return is_everything_closed;
+  isBalanceBrackets = isBalanceBrackets && stackArray.isEmpty();
+
+  return isBalanceBrackets;
 }
 
 
@@ -132,6 +135,7 @@ int evaluatePostfix(const string infix, size_t stackSize = 30) {
       stackArray.push(first + second);
     }
   }
+  return stackArray.pop();
 }
 
 void test() {
@@ -194,6 +198,6 @@ int main() {
   infixToPostfix(exp_2, new_string_2);
   infixToPostfix(exp_3, new_string_3);
   //5.3
-  evaluatePostfix("463-*86-2/+");
+  std::cout << evaluatePostfix("463-*86-2/+");
   return 0;
 }
